@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	<title> Primeira Página </title>
+   </head>
+   <body>
+	<h1> Capítulo 2 </h1>
+	<h2> Estruturando Páginas Web com HTML </h2>
+	<h3> 2.1 Introdução </h3>
+        <p> O HTML (Hypertext Markup Language) é a linguagem fundamental para definir a estrutura e a semântica (o significado) dos componentes de uma página na web. Ele funciona como uma base onde você destaca textos, insere imagens e cria tabelas, de forma semelhante a programas como o Microsoft Word.</p>
+	<h3> 2.1.1 Versões</h3>
+
+	<p> O HTML é a linguagem de marcação que define a estrutura e a semântica das páginas web. O documento destaca que a linguagem não é estática: <br>
+
+<b>Evolução:</b> Passou pelo HTML 4.0, pelo rigoroso XHTML e culminou no HTML5 em 2014, que trouxe suporte nativo para áudio, vídeo e novas formas de interação. <br>
+
+<b>Living Standard:</b> Atualmente, o HTML não possui mais números de versão (como "6" ou "7"). Ele é tratado como um "Padrão Vivo", atualizado continuamente pelo WHATWG para refletir as necessidades modernas da web. <br> 
+	</p>
+
+        <h3> 2.1.2 Elementos e Atributos </h3>
+        
+	<p> Este tópico explica a gramática básica da linguagem: <br>
+
+<b>Elementos:</b> São os componentes da página (parágrafos, botões, etc.). A maioria possui uma tag de abertura e uma tag de fechamento. <br>
+
+<b>Atributos:</b> São propriedades inseridas dentro da tag de abertura para modificar seu comportamento ou fornecer dados extras (ex: href para endereços de links ou src para o caminho de uma imagem). Seguem sempre o formato nome="valor". <br> 
+	</p>
+	
+	<h3> 2.1.3 Estrutura de Documentos HTML </h3>
+
+	<p>Um documento HTML é um arquivo de texto simples com extensão .html. Ele deve seguir uma hierarquia obrigatória: <br>
+
+<b>&lt!DOCTYPE html&gt:</b> Informa ao navegador que o arquivo usa a versão mais recente do HTML. <br>
+
+<b>&lthtml&gt:</b> O elemento "pai" que envolve todo o conteúdo. <br>
+
+<b>&lthead&gt:</b> Contém metadados (informações técnicas), como a codificação de caracteres (UTF-8) e o &lttitle&gt (nome que aparece na aba do navegador). <br>
+
+<b>&ltbody&gt:</b> Onde reside tudo o que o usuário realmente vê na tela. <br>
+	</p>
+
+	<h3> 2.2.1 Elementos de Texto e Formatação </h3>
+
+	<p> Este código detalha como organizar o conteúdo textual: <br>
+
+<b>Hierarquia de Títulos:</b> Vai de &lth1&gt (título principal) até &lth6&gt (subtítulo de menor nível). <br>
+
+<b>Parágrafos e Quebras:</b> Texto comum é colocado em &ltp&gt. Para pular linha sem criar um novo parágrafo, usa-se &ltbr /&gt. <br>
+
+<b>Semântica de Destaque:</b> &ltstrong&gt ou &ltb&gt para negrito; &ltem&gt ou &lti&gt para itálico. <br>
+
+<b>Outros elementos:</b> &ltsup&gt (sobrescrito), &ltsub&gt (subscrito) e &ltblockquote&gt para blocos de citações recuados. <br>
+	</p>
+
+	<h3> 2.2.2 Criação de Listas </h3>
+
+	<p> Existem três tipos de listas em HTML: <br>
+
+<b>Listas Ordenadas (&ltol&gt):</b> Itens numerados automaticamente (1, 2, 3...). <br>
+
+<b>Listas Não Ordenadas (&ltul&gt):</b> Itens marcados com pontos ou símbolos, onde a ordem não importa. <br>
+
+<b>Listas de Definição (&ltdl&gt):</b> Usadas para glossários, relacionando um termo (&ltdt&gt) a uma descrição (&ltdd&gt). <br>
+
+<b>Aninhamento:</b> É possível colocar uma lista dentro de outra para criar subníveis. <br>
+	</p>
+
+	<h3> 2.2.3 Definindo Links </h3>
+
+	<p> O recurso que conecta a web. Criados com a tag &lta&gt: <br>
+
+<b>Externos:</b> Apontam para endereços completos (URLs) de outros sites. <br>
+
+<b>Relativos:</b> Apontam para arquivos dentro do seu próprio projeto ou pasta. <br>
+
+<b>Internos:</b> Permitem criar links que levam o usuário para uma parte específica da mesma página usando o atributo id. <br>
+	</p>
+
+	<h3> 2.2.4 Incluindo Imagens </h3>
+
+	<p> Para inserir imagens, utiliza-se a tag &ltimg&gt: <br>
+
+<b>Atributos Essenciais:</b> <i>src</i> (onde a imagem está guardada) e <i>alt</i> (texto que descreve a imagem para deficientes visuais ou caso o arquivo não carregue). <br>
+
+<b>Legendas:</b> O HTML5 introduziu o par &ltfigure&gt (para envolver a imagem) e &ltfigcaption&gt (para o texto da legenda logo abaixo). <br>
+
+	</p>
+
+	<h3> 2.2.5 Tabelas </h3>
+
+	<p> Usadas para dados tabulares (não para layout): <br>
+
+<b>Estrutura básica:</b> &lttable&gt contém linhas (&lttr&gt), que por sua vez contêm células de dados (&lttd&gt) ou células de cabeçalho (&ltth&gt).
+
+<b>Organização Avançada:</b> Uso de &ltthead&gt, &lttbody&gt e &lttfoot&gt para separar o topo, o conteúdo e o rodapé da tabela.
+
+<b>Mesclagem:</b> Atributos colspan (mesclar colunas) e rowspan (mesclar linhas).
+	</p>
+
+	<h3> 2.2.6 Formulários </h3>
+
+	<p> Permitem a interação direta do usuário: <br>
+
+<b>Tag &ltform&gt:</b> Envolve todos os campos e define para onde os dados serão enviados. <br>
+
+<b>Campos de Entrada (&ltinput&gt):</b> Podem ser do tipo text, password (oculta caracteres), checkbox (múltipla escolha) ou radio (escolha única). <br>
+
+<b>Rótulos:</b> A tag &ltlabel&gt é fundamental para acessibilidade, ligando um texto ao seu respectivo campo. <br>
+
+<b>Envio:</b> Botões do tipo submit disparam o envio das informações.
+
+	</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </body>
+</html>
