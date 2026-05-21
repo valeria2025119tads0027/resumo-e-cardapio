@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	<title> Capítulo 3  </title>
+	<link rel="stylesheet" href="meucss.css">
+   </head>
+   <body>
+   <div style="text-align: center;">
+	<h2> Resumo do Capítulo 3 </h2>
+	<h1> Criando Páginas Web com CSS </h1>
+   </div>
+	<h3> 3.1 Introdução </h3>
+	<p> O CSS (Cascading Style Sheets) é a linguagem que define a "roupa" do site. Enquanto o HTML cuida da estrutura, o CSS controla a cor, a fonte, a organização das listas e a aparência de tabelas e formulários, tornando as páginas mais atraentes.</p>
+
+	<h3> 3.1.1 O Princípio do CSS </h3>
+
+	<p> Uma regra CSS diz ao navegador exatamente como exibir um elemento. Ela é dividida em: <br> </p>
+
+<b>Seletor:</b> O que você quer mudar (ex: h1 para títulos). <br>
+
+<b>Declaração:</b> A mudança em si, composta por uma Propriedade (o que mudar, como a cor) e um Valor (a nova característica, como azul). <br>
+
+Exemplo: <br>
+
+<img src="exemplo_css.png" width="400" height="200">
+
+	<h3> 3.1.2 Incluindo CSS em HTML </h3> </p>
+
+	<p> Existem três formas principais de colocar CSS no seu site: <br> </p>
+
+<b>Externo (.css):</b> Você cria um arquivo separado só para o CSS. É a melhor forma porque você pode usar o mesmo estilo em várias páginas. <br>
+
+<b>Interno ():</b> As regras ficam no topo da página HTML, dentro da tag &lthead&gt. <br>
+
+<b>Embutido (Inline):</b> Você escreve o estilo direto na tag HTML (ex: &ltp style="color: red"&gt). É pouco recomendado pois dificulta a manutenção. <br> </p>
+
+
+	<h3> 3.1.3 Seletores </h3>
+
+	<p> Os seletores permitem escolher os elementos com precisão: <br> </p>
+
+<b>Classe (.nome):</b> Seleciona todos os elementos que têm aquela classe. Útil para aplicar o mesmo estilo em vários lugares. <br>
+
+<b>ID (#nome):</b> Seleciona um único elemento específico (o ID deve ser único na página). <br>
+
+<b>Universal (*):</b> Aplica a regra a absolutamente todos os elementos da página. <br>
+
+<b>Filhos e Descendentes:</b> Você pode selecionar um item que está dentro de outro (ex: body &gt p seleciona apenas os parágrafos que são filhos diretos do corpo da página). <br> </p>
+
+	<h3> 3.1.4 Cascata e Especificidade </h3>
+
+<b>Cascata:</b> Se existirem duas regras iguais, a que foi escrita por último no código é a que vale (como se a última "atropelasse" a anterior). <br>
+
+<b>Especificidade:</b> Seletores mais específicos vencem os genéricos. Por exemplo, uma regra para um ID vale mais que uma regra para uma tag comum. <br> </p>
+
+	<h3> 3.1.5 Herança </h3>
+
+	<p> A herança no CSS é o mecanismo que define quais propriedades de estilo de um elemento pai são transmitidas automaticamente aos seus filhos, facilitando a estilização de textos e fontes de forma global sem a necessidade de repetir regras. Enquanto propriedades tipográficas como <i>color</i> e <i>font-family</i> são comumente herdadas para garantir consistência visual, propriedades de estrutura e layout, como <i>border</i>, não são replicadas para os descendentes, evitando que o design se torne poluído ou excessivamente carregado com estilos desnecessários em cada subelemento. </p>
+
+
+	<h3> 3.2 Aplicando Cores e Formatação de Texto </h3>
+	<h3> 3.2.1 Definindo a Cor do Texto e a Cor de Fundo </h3>
+
+<b>RGB:</b> A cor é composta pela mistura de Vermelho (Red), Verde (Green) e Azul (Blue). Cada componente varia de 0 a 255. <br>
+
+Exemplo: <i>rgb(255, 255, 0)</i> resulta em amarelo. <br>
+
+
+<b>HEX:</b> Utiliza um código de 6 dígitos precedido por <i>#</i>. Os pares de dígitos representam R, G e B em hexadecimal. <br>
+
+Exemplo: <i>#FFFF00</i> (amarelo). Há também a notação curta de 3 dígitos (ex: #FF0). <br>
+
+<b>Nomes de Cores:</b> Uso de palavras-chave pré-definidas. Existem mais de 140 nomes, desde os básicos (ex: <i>yellow</i>) até exóticos como <i>hotpink</i> ou <i>deepskyblue</i>. <br>
+
+
+<b>RGBA:</b> Semelhante ao RGB, mas inclui um quarto parâmetro: o valor Alpha. Ele define a opacidade entre 0.0 (totalmente transparente) e 1.0 (totalmente opaco). <br>
+
+Exemplo: <i>rgba(255, 255, 0, 0.5)</i> cria um amarelo com 50% de transparência. <br>
+
+
+<b>HSL:</b> Baseia-se em Matiz (Hue), Saturação (Saturation) e Luminosidade (Lightness). <br>
+
+Hue: Um ângulo de 0° a 360° em um círculo cromático. <br>
+
+Saturação e Luminosidade: Expressas em porcentagens. <br>
+
+Exemplo: <i>hsl(60, 100%, 50%)</i> para o amarelo. <br>
+
+<b>HSLA:</b> Segue a lógica do HSL, mas adiciona o canal Alpha para controlar a opacidade, assim como no RGBA. <br>
+
+Exemplo: <i>hsla(60, 100%, 50%, 0.5)</i>. <br>
+
+<p>Um Exemplo de  definição  de  cores  usando  CSS: </p>
+
+<img src="colors.png" width="400" height="300">
+
+
+	<h3> 3.2.2 Elaboração de Textos </h3>
+
+	<h4> 1. Definindo as Fontes </h4>
+
+	<p> A principal propriedade para definir a tipografia de um texto é a <i>font-family</i>. O requisito básico para que uma fonte seja exibida corretamente é que ela esteja instalada ou disponível no computador do usuário. </p>
+
+<b>serif:</b> Fontes com pequenos ganchos ou traços nas extremidades (serifas), comuns em textos impressos. <br>
+
+<b>sans-serif:</b> Fontes sem ganchos, com extremidades retas. São consideradas mais adequadas para telas, pois são mais fáceis de ler em diversas resoluções devido à menor quantidade de detalhes. <br>
+
+<b>monospace:</b> Fontes não proporcionais, onde todos os caracteres têm a mesma largura. É a escolha ideal para exibir códigos-fonte. <br>
+
+<b>cursive:</b> Fontes que imitam a escrita à mão. Recomendadas apenas para acentos visuais e casos excepcionais, nunca para textos longos. <br>
+
+<b>fantasy:</b> Fontes decorativas. Assim como as cursivas, devem ser usadas com moderação e não para blocos de texto contínuos. <br> </p>
+
+<p>Exemplo de uso:</p>
+
+<img src="fontes2.png" width="350" height="100">
+
+
+
+
+
+
+
+
+
+
+	<h4> 2. Ajustando o Tamanho das Fontes </h4
+
+	<p> A propriedade font-size é utilizada para modificar o tamanho dos textos em uma página web. O material destaca três unidades principais para essa especificação: <br> </p>
+
+
+<b>Pixel (<i>px</i>):</b> Define o tamanho exato da fonte em píxeis de tela. Por exemplo, 14px significa que a fonte terá exatamente 14 píxeis de altura. É uma unidade de medida absoluta. <br>
+
+<b>Percentagem (<i>%</i>):</b> É uma unidade relativa baseada no tamanho padrão do navegador ou nas configurações do utilizador. <br>
+
+Exemplo: Como a maioria dos navegadores utiliza 16px como padrão, definir uma fonte como 150% resultará num tamanho de 24px ($16 \times 1,5$). <br>
+
+<b>Unidade <i>em</i>:</b> Também é uma unidade relativa baseada na largura da letra "m" (e, por extensão, no tamanho de fonte atual do elemento pai). <br>
+
+Exemplo: Definir um cabeçalho como 1.5em significa que ele terá 1,5 vezes o tamanho da fonte padrão aplicada. <br> </p>
+
+<img src="tamanho.png" width="400" height="300">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<h4> 3. Ajustando o Estilo da Fonte </h4>
+
+	<p> A aparência visual do texto em termos de inclinação e "peso" é controlada por duas propriedades principais: <i>font-style</i> e <i>font-weight</i>. <br>
+
+	<p> <b> Estilo da Fonte (<i>font-style</i>): </b> <br>	
+
+<p> Esta propriedade define se o texto deve ser exibido inclinado ou normal. Os valores possíveis são: <br>
+
+<b>italic:</b> Exibe o texto em itálico. <br>
+
+<b>oblique:</b> Exibe o texto oblíquo (uma inclinação mecânica da fonte normal). <br>
+
+<b>normal:</b> Define o texto sem inclinação (padrão). <br> </p>
+
+<img src="estilo.png" width="250" height="250">
+
+
+
+
+	<p> <b> Espessura da Fonte (<i>font-weight</i>) </b> <br>
+
+
+	<p> Esta propriedade define o "peso" ou a grossura dos caracteres. Ela oferece flexibilidade através de palavras-chave ou valores numéricos: </p>
+
+<p>I) Valores de Palavras-chave: </p>
+
+<b>normal:</b> Espessura padrão (equivalente ao valor 400). <br>
+
+<b>bold:</b> Texto em negrito (equivalente ao valor 700). <br>
+
+<b>lighter</b> / <b>bolder</b>: Tornam o texto um nível mais fino ou mais grosso em relação ao elemento pai. <br>
+ 
+<p>II) Valores Numéricos: </p>
+
+Permite gradações finas entre 100 e 900 (em centenas). <br>
+
+Quanto maior o número, mais grossa é a fonte. Por exemplo, uma fonte com font-weight: 900 será extremamente pesada/grossa, enquanto 100 será muito fina. <br> </p>
+
+
+
+
+
+
+
+
+
+
+
+	<p> <b> 4. Outras Opções de Formatação de Fontes </b> <br>
+
+
+	<p> Além de formatar a fonte, o tamanho da fonte e o estilo da fonte, o CSS oferece muitas outras maneiras de formatar fontes: </p>
+
+<p> I) Transformação e Decoração de Texto </p>
+
+<b>text-transform:</b> Altera a caixa das letras. Pode transformar o texto todo em maiúsculas (uppercase), minúsculas (lowercase) ou capitalizar a primeira letra de cada palavra (capitalize). <br>
+
+<b>text-decoration:</b> Adiciona linhas decorativas ao texto, como sublinhado (underline), tachado/riscado (line-through) ou linha superior (overline). <br>
+
+
+<p> II) Espaçamentos </p>
+
+<b>line-height:</b> Controla o espaçamento vertical entre as linhas de um texto. <br>
+
+<b>letter-spacing:</b> Controla o espaço horizontal entre letras individuais. <br>
+
+<b>word-spacing:</b> Controla o espaço horizontal entre as palavras. <br>
+
+<p> III) Alinhamento e Recuo </p>
+
+<b>text-align:</b> Alinhamento horizontal do texto. Valores comuns: left (esquerda), right (direita), center (centralizado) e justify (justificado). <br>
+
+<b>vertical-align:</b> Alinhamento vertical do texto em relação ao seu contêiner. Valores: top (topo), bottom (base) e middle (meio). <br>
+
+<b>text-indent:</b> Cria um recuo (espaço em branco) especificamente na primeira linha de um parágrafo. <br>
+
+<p> IV) Efeitos Visuais </p>
+
+<b>text-shadow:</b> Aplica efeitos de sombreamento diretamente nos caracteres do texto, conferindo profundidade. <br>
+
+
+
+
+
+
+
+
+	<p> <b> 5. Formatação de Links </b> </p>
+
+	<p> Os links podem ser estilizados de forma diferente dependendo do estado em que se encontram.</p>
+
+<p><i>:link</i> - um link normal, não visitado.<br>
+<i>:visited</i> - um link que o usuário visitou.<br>
+<i>:hover</i> - um link que aparece quando o usuário passa o mouse sobre ele.<br>
+<i>:active</i> - um link no momento em que é clicado <br>
+<i>:focus</i> - permite a formatação de links quando eles recebem o foco.</p>
+
+<img src="links.png" width="300" height="300">
+<img src="links3.png" width="300" height="300">
+
+
+
+
+
+	<h3> 3.3 Listas e Tabelas </h3>
+
+	<p> Componentes estruturais como listas e tabelas podem ter suas aparências completamente customizadas através do CSS. Esta seção introduz as propriedades específicas disponíveis para manipular esses elementos. </p>
+
+	<h3> 3.3.1 Design de Listas </h3>
+	
+	<p> A principal forma de personalizar listas no CSS é modificando os marcadores (bullets) que antecedem cada item da lista. A propriedade utilizada para essa finalidade é a <i>list-style-type</i>. <br>
+
+Os valores aceitos por essa propriedade variam dependendo se a lista é do tipo ordenada (&ltol&gt) ou não ordenada (&ltul&gt). </p>
+
+	<p><b> 1. Formatação de Listas Não Ordenadas </b></p>
+
+	<p> Listas não ordenadas são aquelas em que os itens não possuem uma sequência numérica ou alfabética rígida. Por padrão, os navegadores exibem cada item precedido por um ponto preto sólido. Com a propriedade list-style-type, é possível alterar esse comportamento usando os seguintes valores: </p>
+
+
+<b>none:</b> Remove completamente qualquer marcador da lista (útil para criar menus de navegação). <br>
+
+<b>disc:</b> Aplica o marcador padrão, que consiste em um círculo preto preenchido. <br>
+
+<b>circle:</b> Altera o marcador para um círculo vazado (branco por dentro com uma borda preta). <br>
+
+<b>square:</b> Transforma o marcador em um quadrado preto sólido. <br>
+
+
+
+
+
+	<p><b> 2. Formatação de Listas Ordenadas </b></p>
+	
+	<p> Listas ordenadas (&ltol&gt) são aquelas em que os itens seguem uma sequência lógica ou classificação. Em vez de símbolos geométricos, elas utilizam sistemas numéricos ou alfabéticos. <br>
+
+A propriedade list-style-type permite controlar e alterar o formato dessa ordenação através de diversos valores, incluindo: </p>
+
+
+<b>decimal:</b> É a numeração padrão. Exibe os itens utilizando algarismos arábicos normais (1, 2, 3, ...).  <br>
+
+<b>decimal-leading-zero:</b> Semelhante ao decimal, mas adiciona um zero à esquerda para números de um único dígito (01, 02, 03, ... 09, 10, 11, ...). <br>
+
+<b>lower-alpha:</b> Utiliza letras minúsculas do alfabeto para enumerar a lista (a, b, c, ...). <br>
+
+<b>upper-alpha:</b> Utiliza letras maiúsculas do alfabeto para a ordenação (A, B, C, ...). <br>
+
+<b>lower-roman:</b> Realiza a contagem utilizando algarismos romanos em letras minúsculas (i, ii, iii, iv, ...). <br>
+
+<b>upper-roman:</b> Realiza a contagem utilizando algarismos romanos em letras maiúsculas (I, II, III, IV, ...). <br>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<h3> 3.3.2 Design de Tabelas </h3>
+
+<p><b>1. Bordas de tabela CSS </b></p>
+
+	<p> O CSS permite adicionar bordas, cores de fundo e espaçamentos internos para tornar os dados legíveis. </p>
+
+<i>border-width</i> - Define a largura da borda. <br>
+<i>border-style</i> - Define o estilo da borda (obrigatório). <br>
+<i>border-color</i> - Define a cor da borda. <br>
+
+<p>O exemplo abaixo especifica uma borda sólida de 1px para os elementos &lttable&gt, &ltth&gt e &lttd&gt:</p>
+
+<img src="border.png" width="200" height="100">
+<br>
+
+<p>Exemplo: </p>
+
+<img src="border_exemplo.png" width="200" height="100"> </p>
+
+
+
+<p><b>2. Cor da borda da tabela CSS </b></p>
+
+	<p> O exemplo abaixo especifica uma borda verde sólida de 1px para os elementos &lttable&gt, &ltth&gt e &lttd&gt: </p>
+
+<img src="tab2.png" width="200" height="100"> <br>
+
+
+<p>Exemplo: </p>
+<img src="ex2.png" width="200" height="100"> <br>
+
+
+<p><b>3. CSS para recolher bordas de tabelas </b></p>
+
+	<p> A border-collapsepropriedade CSS define se as bordas da tabela devem se unir em uma única borda ou permanecer separadas como no HTML padrão. </p>
+
+	<p> Essa propriedade pode ter um dos seguintes valores: </p>
+
+<b>separate</b> - Valor padrão. As bordas são separadas; cada célula exibirá suas próprias bordas. <br>
+<b>collapse</b> - As bordas são recolhidas em uma única borda sempre que possível. <br.
+
+<p>A tabela a seguir possui bordas recolhidas: </p>
+
+<img src="bordas1.png" width="200" height="100"> <br>
+
+
+<p>Exemplo: </p>
+<img src="bordas2.png" width="200" height="100"> <br>
+
+
+
+<p><b>4. Preenchimento de tabela CSS </b></p>
+
+	<p> Para controlar o espaço entre a borda e o conteúdo de uma tabela, use a paddingpropriedade nos elementos &lttd&gt e &ltth&gt: </p>
+
+<img src="pad1.png" width="300" height="200"> <br>
+
+
+<p>Exemplo: </p>
+<img src="pad2.png" width="200" height="100"> <br>
+
+
+
+
+
+	<h3> 3.4 Sistemas de Layout </h3>
+
+	<p> Os sistemas de layout em CSS determinam como os elementos HTML são organizados e posicionados na tela do navegador. O desenvolvimento web evoluiu de métodos baseados em tabelas e truques de posicionamento para sistemas nativos modernos e altamente robustos. </p>	
+
+
+<p><b>1. Float </b></p>
+
+<p> A propriedade float define o posicionamento de elementos empurrando-os para as extremidades laterais do seu elemento pai. </p>
+
+<b>Como funciona:</b> Ao aplicar float: left; ou float: right;, o elemento é deslocado para a esquerda ou para a direita, saindo parcialmente do fluxo normal da página. Isto faz com que os elementos seguintes (como blocos de texto) subam e contornem o elemento flutuante. <br>
+
+
+<p><b>2. Flexbox </b></p>
+
+<p> O Flexbox é um sistema de layout unidimensional, projetado para alinhar e distribuir espaço entre elementos numa única dimensão de cada vez — ou numa linha horizontal ou numa coluna vertical. </p>
+
+<b>Como funciona:</b> O modelo é ativado aplicando <i>display: flex;</i> no elemento pai (o Flex Container). A partir desse momento, todos os elementos filhos diretos (Flex Items) ganham um comportamento flexível e ajustam-se automaticamente ao espaço disponível. <br>
+
+<b>Eixos de alinhamento:</b> Trabalha com o Eixo Principal (Main Axis), que dita a direção dos itens via <i>flex-direction</i> (row para horizontal ou <i>column</i> para vertical), e com o Eixo Cruzado (Cross Axis), que corre de forma perpendicular ao principal. <br>
+
+<p>Propriedades essenciais:</p>
+
+<i>justify-content</i>: Distribui o espaço extra e alinha os itens ao longo do Eixo Principal (centralizado, espaçamento igual, etc.). <br>
+
+<i>align-items</i>: Controla o alinhamento vertical/horizontal dos itens ao longo do Eixo Cruzado. <br>
+
+<i>flex-grow</i> e <i>flex-shrink</i>: Permitem que os elementos aumentem para preencher espaços vazios ou encolham para evitar que o layout quebre. <br>
+
+
+<p><b>3. Grid </b></p>
+
+<p> O Grid Layout é um sistema de posicionamento bidimensional. Ele permite gerir e alinhar elementos em duas dimensões em simultâneo — controlando linhas (horizontal) e colunas (vertical) ao mesmo tempo. </p>
+
+<b>Como funciona</b>: É ativado aplicando display: grid; no elemento pai (o Grid Container). Em vez de depender do tamanho individual dos filhos para ditar o layout, define-se primeiro uma malha rígida (grade) no elemento pai e, em seguida, posicionam-se os filhos nas células dessa estrutura. <br>
+
+<p>Propriedades essenciais:</p>
+
+<i>grid-template-columns</i> e <i>grid-template-rows</i>: Permitem desenhar explicitamente o número e o tamanho das colunas e das linhas da página. <br>
+
+<i>gap</i> (ou <i>grid-gap</i>): Define o espaçamento de canaleta (linhas em branco que separam as células) sem a necessidade de aplicar margens complexas nos elementos filhos. <br>
+
+Unidade <i>fr</i> (Fraction): Unidade de medida exclusiva do Grid que representa uma fração do espaço restante disponível (ex: <i>1fr 2fr</i> divide o espaço em duas colunas, onde a segunda tem o dobro do tamanho da primeira).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </body>
+</html>
