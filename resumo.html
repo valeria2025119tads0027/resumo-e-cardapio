@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	<title> Capítulo 4 </title>
+	<link rel="stylesheet" href="meucss.css">
+   </head>
+   <body>
+   <div style="text-align: center;">
+	<h1> Tornando Páginas Web Interativas com JavaScript </h1>
+   </div>
+	<h3><u> 4.1 Introdução </u></h3>
+	<p> O JavaScript é uma das três linguagens essenciais para a web (junto com HTML e CSS), sendo responsável por adicionar comportamento dinâmico e interatividade às páginas. O padrão que rege o JavaScript é chamado <b>ECMAScript</b>, gerenciado pela <i>Ecma International</i> (antiga <i>European Computer Manufacturers Association</i>). A especificação oficial é a <b>"ECMA-262"</b>, publicada anualmente desde 2015, originando versões conhecidas como ECMAScript 2015, ECMAScript 2016, entre outras. </p>
+
+	<h3><u> 4.1.1 Incluindo JavaScript </u></h3>
+
+	<p> O código JavaScript pode ser adicionado a uma página web de diferentes maneiras: <br> </p>
+
+	<b>Preparando a Estrutura de Diretórios:</b> Para uma boa organização do projeto, a prática recomendada é manter o arquivo HTML principal (<i>index.html</i>) no nível raiz e criar pastas separadas para os demais recursos, geralmente chamadas <i>styles</i> (para arquivos CSS) e <i>scripts</i> (para arquivos JavaScript). <br>
+
+	<b>Criando um Arquivo JavaScript:</b> Recomenda-se armazenar o código em arquivos de texto separados com a extensão <i>.js</i> (como <i>main.js</i>). Isso mantém o código limpo e permite que o mesmo script seja reaproveitado em múltiplas páginas HTML. Um exemplo inicial simples de instrução é a função <i>alert('Hello World');</i>, que exibe uma caixa de diálogo na tela. <br>
+
+	<b>Integrando um Arquivo JavaScript em um Arquivo HTML:</b> Para vincular o arquivo <i>.js</i> externo, utiliza-se a tag HTML <i>&lt;script&gt;</i> contendo o atributo <i>src</i>, que especifica o caminho ou URL do script (ex: <i>&lt;script src="scripts/main.js"&gt;&lt;/script&gt;</i>). <br>
+
+	<b>Definindo JavaScript Diretamente dentro do HTML:</b> Embora seja possível escrever o código diretamente entre as tags <i>&lt;script&gt;</i> e <i>&lt;/script&gt;</i> no HTML sem usar o atributo <i>src</i>, essa prática <b>não é aconselhável</b>, pois mistura a estrutura (HTML) com a lógica (JavaScript) em um único arquivo. <br>
+
+	<b>O Elemento &lt;noscript&gt;:</b> Essa tag é usada para definir um bloco de código HTML que só será renderizado se o navegador do usuário não der suporte ao JavaScript ou se ele estiver desativado. É muito útil para indexação de motores de busca (crawlers) em páginas que dependem quase exclusivamente de JavaScript e carregamento via Ajax. <br>
+
+	<h3><u> 4.1.2 Exibindo Caixas de Diálogo (Dialog Boxes) </u></h3>
+
+	<p> O JavaScript possui três funções nativas padrão para exibir caixas de diálogo no navegador: </p>
+
+	<ol>
+		<li> <b><code>alert()</code></b>: Gera uma caixa de diálogo simples com uma mensagem de aviso/notificação e um botão "OK". </li>
+		<li> <b><code>confirm()</code></b>: Abre uma caixa de confirmação que possui dois botões — um para confirmar a mensagem ("OK") e outro para cancelar ("Cancel"). </li>
+		<li> <b><code>prompt()</code></b>: Exibe uma caixa de entrada de dados, permitindo que o usuário digite um texto. </li>
+	</ol>
+
+	<p> <i>Nota:</i> Na prática real, essas caixas de diálogo padrão são pouco utilizadas devido à funcionalidade limitada e à impossibilidade de customizar a aparência visual. </p>
+
+	<h3><u> 4.1.3 Usando o Console do Desenvolvedor </u></h3>
+
+	<p> Exibir resultados e testes por meio de caixas de diálogo (<i>alert</i>) torna-se irritante e ineficiente devido aos cliques constantes. Por isso, os navegadores modernos possuem o <b>Console do Desenvolvedor</b> (<i>Developer Console</i>) oculto por padrão, acessível através de ferramentas de desenvolvimento para visualizar mensagens de teste e resultados parciais de funções. </p>
+
+	<b>A ativação do console varia por navegador:</b> <br>
+	<i>Chrome</i>: View &rarr; Developer &rarr; JavaScript Console. <br>
+	<i>Firefox</i>: Tools &rarr; Web Developer &rarr; Web Console. <br>
+	<i>Safari</i>: Developer &rarr; Show Error Console (exige habilitação prévia do menu "Developer" em Preferences &rarr; Advanced). <br>
+	<i>Opera</i>: Developer &rarr; Developer Tools &rarr; aba Console. <br>
+	<i>Microsoft Edge</i>: Tecla F12 ou Other Tools &rarr; Development Tools. <br>
+
+	<p> Para escrever mensagens no console, os navegadores disponibilizam o objeto <code>console</code>, que possui métodos específicos que podem ser destacados por cores ou símbolos dependendo do navegador: </p>
+
+	<i><code>console.log()</code></i>: Imprime uma mensagem comum/normal. <br>
+	<i><code>console.clear()</code></i>: Limpa todas as mensagens presentes no console. <br>
+	<i><code>console.debug()</code></i>: Exibe mensagens apenas se o nível de log "debug" estiver ativado durante a depuração. <br>
+	<i><code>console.info()</code></i>: Produz uma mensagem informativa. <br>
+	<i><code>console.warn()</code></i>: Emite um alerta/aviso (geralmente acompanhado de um ícone de aviso). <br>
+	<i><code>console.error()</code></i>: Exibe uma mensagem de erro (geralmente destacada com um ícone de erro). <br>
+
+	<h3><u> 4.1.4 Introdução à Programação </u></h3>
+
+	<p> Programar consiste essencialmente em fornecer um conjunto de instruções para que um computador execute tarefas específicas (como cálculos complexos ou rotinas diárias automatizadas). O desenvolvedor formula etapas individuais para resolver um problema, e o computador as avalia uma a uma. </p>
+
+	<b>Algoritmo e Programa:</b> A sequência de etapas para solucionar um problema chama-se <i>algoritmo</i>. Um <i>programa</i> (software ou aplicação), por sua vez, contém uma sequência de diferentes algoritmos. <br>
+
+	<b>Código Binário vs. Linguagem de Alto Nível:</b> No nível do hardware, os computadores só entendem código binário (linguagem de máquina), composto por zeros (energia desligada) e uns (energia ligada). Como fornecer instruções diretamente em binário é extremamente complexo para humanos, utilizamos linguagens de programação que oferecem um nível de abstração. O JavaScript é classificado como uma <b>linguagem de programação de alto nível</b>, pois se afasta bastante dos zeros e uns por meio do uso de palavras-chave estruturadas. <br>
+
+	<p> Principais estruturas fundamentais que as linguagens de programação (incluindo o JavaScript) fornecem: </p>
+	<i>Variáveis e Constantes</i>: Recipientes para armazenar e reutilizar dados na memória. <br>
+	<i>Data Types (Tipos de dados)</i>: Descrevem a natureza do dado (número, texto, booleano, etc.). <br>
+	<i>Operadores</i>: Permitem realizar cálculos e comparações. <br>
+	<i>Estruturas de Controle</i>: Controlam o fluxo do programa por meio de desvios condicionais e laços de repetição. <br>
+	<i>Funções</i>: Blocos de código reutilizáveis. <br>
+	<i>Objetos, Classes e Arrays</i>: Estruturas para agrupar, gerenciar e listar dados de forma avançada. <br>
+
+	<h3><u> 4.2 Variáveis, Constantes, Tipos de Dados e Operadores </u></h3>
+
+	<h3><u> 4.2.1 Definindo Variáveis </u></h3>
+
+	<p> Variáveis servem para reter dados temporariamente na memória durante a execução do script. Em JavaScript moderno, elas são declaradas com a palavra-chave <code>let</code>. A criação ocorre em duas etapas, que podem ser feitas separadamente ou combinadas em uma única linha: </p>
+
+	<ol>
+		<li> <b>Declaração da variável:</b> Define a existência da variável (ex: <i>let firstName;</i>). </li>
+		<li> <b>Inicialização/Atribuição:</b> Atribui um valor concreto à variável usando o operador = (ex: <i>firstName = 'John';</i>). </li>
+	</ol>
+
+	<p> <i>Exemplo combinado:</i> <code>let lastName = 'Doe';</code>. </p>
+	<p> <i>Nota:</i> Variáveis também podem ser criadas com a palavra-chave antiga <code>var</code>, cujas diferenças conceituais (como escopo) são tratadas em tópicos avançados. </p>
+
+	<h3><u> 4.2.2 Definindo Constantes </u></h3>
+
+	<p> Ao contrário das variáveis, cujos valores podem ser subscritos ou alterados a qualquer momento, as <b>constantes</b> servem para armazenar valores que só podem ser inicializados uma única vez e nunca modificados. Elas são declaradas com a palavra-chave <code>const</code> (ex: <i>const MAXIMUM = 5000;</i>). Por convenção de boas práticas, recomenda-se usar <code>const</code> para todos os identificadores que não sofrerão alterações ao longo do programa, e seus nomes costumam ser escritos inteiramente em letras maiúsculas. </p>
+
+	<h3><u> 4.2.3 Usando Tipos de Dados (Data Types) </u></h3>
+
+	<p> O JavaScript possui tipos de dados primitivos, especiais e complexos: <br> </p>
+
+	<b>Números (<code>number</code>):</b> Usados para cálculos matemáticos. O JavaScript não faz distinção interna entre inteiros (<i>5</i>, <i>-22</i>) e números decimais (<i>0.5</i>, <i>-0.9</i>); ambos pertencem ao mesmo tipo de dado. <br>
+
+	<b>Strings (<code>string</code>):</b> Representam sequências de caracteres de texto (letras, dígitos, símbolos). Devem ser delimitadas por aspas simples (<i>'text'</i>) ou aspas duplas (<i>"text"</i>), sem misturá-las na mesma declaração. Também existem as <i>template strings</i>, criadas com o símbolo de crase (<i>`</i>), que permitem o uso de variáveis embutidas como placeholders. <br>
+
+	<b>Booleanos (<code>boolean</code>):</b> Valores lógicos de verdade que podem assumir apenas dois estados: <i>true</i> (verdadeiro) ou <i>false</i> (falso). <br>
+
+	<b>Especiais (<code>null</code> e <code>undefined</code>):</b> Formas primitivas especiais do JavaScript para indicar ausência de valor ou variáveis não inicializadas. <br>
+
+	<b>Símbolos (<code>symbols</code>):</b> Outro tipo de dado nativo da linguagem. <br>
+
+	<b>Objetos:</b> Tipos estruturados complexos (abordados na seção 4.5.1). <br>
+
+	<h3><u> 4.2.4 Usando Operadores </u></h3>
+
+	<p> Os operadores permitem manipular, combinar ou comparar valores em JavaScript: <br> </p>
+
+	<b>Operadores Aritméticos:</b> Realizam cálculos com números. Incluem adição (<i>+</i>), subtração (<i>-</i>), multiplicação (<i>*</i>), divisão (<i>/</i>), módulo ou resto da divisão (<i>%</i>), incremento (<i>++</i>, adiciona 1), decremento (<i>--</i>, subtrai 1) e exponenciação/potência (<i>**</i>). <br>
+
+	<b>Operador de Atribuição:</b> O símbolo = transfere o valor da direita para a variável/constante da esquerda. <br>
+
+	<b>Operador de Concatenação:</b> O símbolo +, quando aplicado entre strings (ou texto e número), funde os elementos em uma única cadeia de caracteres. <br>
+
+	<b>Operadores Lógicos:</b> Operam sobre valores booleanos. O operador AND (<i>&amp;&amp;</i>) avalia se ambos os lados são verdadeiros; o operador OR (<i>||</i>) avalia se pelo menos um dos lados é verdadeiro; e o operador de negação (<i>!</i>) inverte o valor booleano atual. <br>
+
+	<b>Operadores Bit a Bit (Bitwise):</b> Permitem manipular os bits individuais dos valores diretamente. São eles: <i>&amp;</i> (AND), <i>|</i> (OR), <i>^</i> (XOR), <i>~</i> (NOT), <i>&lt;&lt;</i> (deslocamento à esquerda), <i>&gt;&gt;</i> (deslocamento à direita propagando sinal) e <i>&gt;&gt;&gt;</i> (deslocamento à direita preenchendo com zeros). <br>
+
+	<b>Operadores de Comparação:</b> Comparam dois valores e retornam um booleano. Incluem menor que (<i>&lt;</i>), maior que (<i>&gt;</i>), menor ou igual (<i>&lt;=</i>), maior ou igual (<i>&gt;=</i>), igualdade (<i>==</i>), igualdade estrita/identidade (<i>===</i>), desigualdade (<i>!=</i>) e desigualdade estrita (<i>!==</i>). <br>
+
+	<h3><u> 4.3 Usando Estruturas de Controle </u></h3>
+	<p> As estruturas de controle definem caminhos na lógica de um programa, decidindo se um bloco de código deve ser executado e quantas vezes ele deve se repetir. </p>
+
+	<h3><u> 4.3.1 Usando Declarações Condicionais e Desvios (Branching) </u></h3>
+
+	<b>Estrutura <i>if</i> e <i>else</i>:</b> Executa um bloco de instruções contido em chaves <i>{}</i> apenas se uma condição estipulada for verdadeira (<i>true</i>). Caso a condição não seja atendida, a palavra-chave complementar <i>else</i> pode ser opcionalmente adicionada para prevenir ou direcionar o programa para um caminho alternativo de execução. <br>
+
+	<b>Estrutura <i>else if</i>:</b> Permite encadear e testar múltiplas condições sucessivas antes de cair no bloco padrão <i>else</i>. <br>
+
+	<b>Estrutura <i>switch</i>:</b> Usada para testar uma única variável contra múltiplos caminhos de valores predefinidos (<i>case</i>). O comando <i>break</i> deve ser colocado ao final de cada <i>case</i> para interromper a execução do <i>switch</i> assim que a correspondência for encontrada; se o <i>break</i> for omitido, o programa continuará executando todos os blocos <i>case</i> subsequentes de forma contínua até achar um <i>break</i> ou terminar a estrutura. O bloco <i>default</i> define a ação padrão caso nenhuma das condições anteriores coincida com o valor testado. <br>
+
+	<p> <i>Nota sobre manipulação do HTML:</i> Através do objeto nativo <code>document</code> (que representa a página web atual), métodos como <code>getElementById('id')</code> resgatam elementos da estrutura HTML. Alterar a propriedade <code>.textContent</code> desse elemento retornado permite modificar dinamicamente o texto exibido na tela via JavaScript. </p>
+
+	<h3><u> 4.3.2 Usando Laços (Loops) </u></h3>
+
+	<p> Os laços de repetição servem para executar instruções repetidas vezes. Existem três tipos principais em JavaScript: </p>
+
+	<p> <b>1. Laço Controlado por Contador (<i>for</i>)</b> </p>
+	<p> Utiliza a palavra-chave <i>for</i> e exige a definição de três áreas obrigatórias entre parênteses, separadas por ponto e vírgula: </p>
+	<i>Inicialização</i>: Executada uma única vez no início para instanciar a variável contadora (ex: <i>let i = 1;</i>). <br>
+	<i>Condição</i>: Avaliada antes de cada iteração para decidir se o loop continua ou para (ex: <i>i &lt;= 10;</i>). <br>
+	<i>Expressão de Incremento</i>: Executada ao término de cada volta do laço, geralmente adicionando valor ao contador (ex: <i>i++</i>). <br>
+
+	<p> <b>2. Laço com Teste no Início (<i>while</i>)</b> </p>
+	<p> Avalia primeiro a condição booleana e, somente se ela for verdadeira, inicia a iteração. Se a condição for falsa logo no início, nenhuma instrução do bloco é executada. </p>
+
+	<p> <b>3. Laço com Teste no Fim (<i>do-while</i>)</b> </p>
+	<p> Executa o bloco de código primeiro e só realiza a validação da condição ao término da iteração. Isso garante que as instruções internas sejam executadas <b>pelo menos uma vez</b>, mesmo que a condição já seja falsa no começo. </p>
+
+	<h3><u> 4.4 Funções e Tratamento de Erros </u></h3>
+	<p> Funções são blocos estruturados que agrupam linhas de código para que possam ser facilmente reutilizadas e chamadas em qualquer ponto do sistema. </p>
+
+	<h3><u> 4.4.1 Definindo e Chamando Funções </u></h3>
+
+	<p> O JavaScript oferece três sintaxes comuns para a criação de funções: <br> </p>
+	<b>Declaração de Função (Function Declaration):</b> Utiliza a palavra-chave <i>function</i>, seguida do nome identificador da função, parênteses e o corpo em chaves (ex: <i>function name() { ... }</i>). <br>
+	<b>Expressão de Função (Function Expression):</b> Define uma função sem nome (função anônima) e a armazena diretamente dentro de uma variável ou constante (ex: <i>const name = function() { ... };</i>). <br>
+	<b>Funções de Seta (Arrow Functions):</b> Uma sintaxe curta e simplificada que elimina palavras-chave baseando-se no símbolo de flecha =&gt; (ex: <i>const name = () =&gt; { ... };</i>). <br>
+
+	<p> Para disparar a execução de qualquer uma dessas funções, basta escrever o nome correspondente seguido de parênteses: <code>printNumbersFrom1To10();</code>. </p>
+
+	<h3><u> 4.4.2 Passando e Analisando Parâmetros de Função </u></h3>
+	<p> As funções ganham flexibilidade quando aceitam dados de entrada através de <b>parâmetros</b>. Eles são declarados dentro dos parênteses da função e atuam internamente como variáveis locais normais. Ao chamar a função, inserem-se os valores reais (argumentos) correspondentes a esses parâmetros para que o comportamento mude de acordo com a entrada (ex: <i>printNumbersFromXToY(1, 100);</i>). </p>
+
+	<h3><u> 4.4.3 Definindo Valores de Retorno (Return Values) </u></h3>
+	<p> Além de receber dados, as funções podem enviar informações de volta para o código que as invocou. Esse dado devolvido é o <i>valor de retorno</i>. Para isso, emprega-se a palavra-chave <code>return</code> seguida do dado ou variável a ser enviado. Quando a função atinge o <code>return</code>, ela encerra imediatamente e entrega o resultado, que pode ser armazenado em outra constante (ex: <i>const z = sum(5, 6);</i>). </p>
+
+	<h3><u> 4.4.4 Respondendo a Erros (Tratamento de Erros) </u></h3>
+
+	<p> Durante o desenvolvimento e execução de programas, podem ocorrer três categorias principais de erros: </p>
+	<ol>
+		<li> <b>Erros de Sintaxe (Syntax Errors):</b> Quebras nas regras gramaticais da linguagem (ex: esquecer parênteses em um <i>for</i> ou digitar palavras reservadas incorretamente como <i>funktion</i>). Podem ser mitigados com o uso de editores ou IDEs que possuem validação sintática em tempo real. </li>
+		<li> <b>Erros de Tempo de Execução (Runtime Errors):</b> Acontecem quando o código está sintaticamente correto, mas falha ao rodar por tentar realizar ações inválidas (ex: acessar uma variável que não existe no contexto). São controlados via <i>tratamento de erros</i>. </li>
+		<li> <b>Erros Lógicos (Bugs):</b> Falhas na lógica do algoritmo que geram resultados incorretos, embora o programa rode sem travar. São evitados através de testes automatizados. </li>
+	</ol>
+
+	<p> Para gerenciar falhas em tempo de execução, o JavaScript utiliza os blocos estruturados <b>try-catch</b>: <br> </p>
+	<b><code>try</code>:</b> Envolve e executa um trecho de código que apresenta risco em potencial de gerar falhas. <br>
+	<b><code>throw</code>:</b> Permite que o próprio desenvolvedor force o disparo ("lance") de um erro customizado caso uma validação falhe (ex: <i>throw new Error('Mensagem');</i>), instanciando um objeto a partir da classe base de erros do JavaScript. <br>
+	<b><code>catch</code>:</b> Se qualquer erro acontecer no bloco <i>try</i>, a execução é interrompida imediatamente e o controle é transferido para o bloco <i>catch(error)</i>. Esse bloco captura a falha, oferece acesso aos detalhes do objeto de erro e permite tomar contramedidas amigáveis, como registrar o erro com <i>console.error(error)</i> ou alertar o usuário. <br>
+
+	<h3><u> 4.5 Objetos e Arrays </u></h3>
+	<p> Além dos dados primitivos simples, o JavaScript trabalha com estruturas complexas de armazenamento. Os <i>objetos</i> servem para agrupar propriedades e funcionalidades correlacionadas, enquanto os <i>arrays</i> operam como listas ordenadas de múltiplos itens ou elementos posicionados em sequência. </p>
+
+	<h3><u> 4.5.1 Usando Objetos </u></h3>
+	<p> Existem múltiplos métodos para a concepção de objetos no JavaScript, sendo a abordagem por <b>notação literal</b> (<i>object-literal notation</i>) a alternativa mais direta e simples. Nesta abordagem, delimita-se a estrutura interna do objeto fazendo o uso de chaves <i>{}</i>. No interior destas chaves, os dados e atributos passam a ser estruturados e definidos de maneira explícita sob a forma de propriedades do objeto. </p>
+
+	 <script src="meu_script.js"></script>
+   </body>
+</html>
